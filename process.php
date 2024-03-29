@@ -1,5 +1,6 @@
 <?php
     require_once "seq.php";
+    require_once "seqstat.php";
 
     if (!empty($_POST["start"]) && !empty($_POST["last"])) {
         $seq = new seq();
@@ -48,6 +49,16 @@
         echo "<br/><br/>";
         echo "<b>Min value: $min_num</b><br/>Iterations: $min_iters_range<br/>Max value: $min_max_val_range";
 
+        echo "<br/><br/>-------------------<br/><br/>";
+
+        $seqstat = new seqstat();
+        $histogram = $seqstat->calculate_histogram(
+            htmlentities($_POST["start"]), 
+            htmlentities($_POST["last"])
+        );
+
+        echo "Statistics (Histogram) data <br/>";
+        print_r($histogram);
     }
     elseif (!empty($_POST["start"])){
         $seq = new seq();

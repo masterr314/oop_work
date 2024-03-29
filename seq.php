@@ -1,7 +1,7 @@
 <?php
 
-class seq{ 
-    function collatz_conjecture_range($start, $finish){
+class seq { 
+    public function collatz_conjecture_range($start, $finish){
         $current = $start;
         while ($current <= $finish) {
             $range_result[$current] = $this->collatz_conjecture($current);
@@ -10,7 +10,7 @@ class seq{
         return $range_result;
     }
 
-    function collatz_conjecture($start){
+    public function collatz_conjecture($start){
         $result = [$start];
         $current = $start;
         while ($current != 1) {
@@ -20,7 +20,7 @@ class seq{
         return $result;
     }
 
-    function arithmetic_progression($first, $delta, $amount){
+    public function arithmetic_progression($first, $delta, $amount){
         $result = [];
         $counter = 0;
         while ($counter != $amount) {
