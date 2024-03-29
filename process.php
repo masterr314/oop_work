@@ -1,8 +1,12 @@
 <?php
-    require_once "calculate.php";
+    require_once "seq.php";
 
     if (!empty($_POST["start"]) && !empty($_POST["last"])) {
-        $range_result = calculate_range(htmlentities($_POST["start"]), htmlentities($_POST["last"]));
+        $seq = new seq();
+        $range_result = $seq->collatz_conjecture_range(
+            htmlentities($_POST["start"]), 
+            htmlentities($_POST["last"])
+        );
 
         $max_num;
         $max_iters_range;
@@ -46,7 +50,10 @@
 
     }
     elseif (!empty($_POST["start"])){
-        $result = calculate(htmlentities($_POST["start"]));
+        $seq = new seq();
+        $result = $seq->collatz_conjecture(
+            htmlentities($_POST["start"])
+        );
         echo 'Iterations: <br/>';
         $len = count($result);
         foreach ($result as $index => $value) {

@@ -8,13 +8,29 @@
     </head>
     <body>
         <div>
-            <h2>Collatz Conjecture: </h2>
+            <h2>Collatz Conjecture</h2>
             <div>
                 <form action="process.php" method="POST">
                     <label for="startNum" class="form-label">Start number: </label>
                     <input type="number" class="form-control" id="startNum" name="start">
                     <label for="lastNum" class="form-label">Last number: </label>
                     <input type="number" class="form-control" id="lastNum" name="last"/>
+                    <br/>
+                    <button type="submit" class="btn btn-primary">Calculate</button>
+                </form>
+            </div>
+        </div>
+        <br/><br/>
+        <div>
+            <h2>Arithmetic Progression</h2>
+            <div>
+                <form action="arithmetic_projection.php" method="POST">
+                    <label for="first" class="form-label">First element: </label>
+                    <input type="number" class="form-control" id="first" name="first">
+                    <label for="delta" class="form-label">Delta: </label>
+                    <input type="number" class="form-control" id="delta" name="delta"/>
+                    <label for="amount" class="form-label">Amount: </label>
+                    <input type="number" class="form-control" id="amount" name="amount"/>
                     <br/>
                     <button type="submit" class="btn btn-primary">Calculate</button>
                 </form>
